@@ -1,0 +1,22 @@
+{
+  "name": "hrsf72-tic-tac-toe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjwatt99/hrsf72-tic-tac-toe.git"
+  },
+  "author": "JJ Gutierrez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjwatt99/hrsf72-tic-tac-toe/issues"
+  },
+  "homepage": "https://github.com/jjwatt99/hrsf72-tic-tac-toe#readme",
+  "dependencies": {
+    "commander": "^2.9.0"
+  }
+}
