@@ -51,14 +51,22 @@ ticTac.prototype.checkForTie = function() {
   return count === (this.moves.length * 3);
 }
 
+ticTac.prototype.checkForDuplicates = function(move) {
+  var position = this.getPosition(move);
+  if (this.moves[position[0]][position[1]] === 'X' || this.moves[position[0]][position[1]] === 'O') {
+    return true;
+  }
+  return false;
+}
+
 ticTac.prototype.getMove = function() {
   var move = read.question(this.currentPlayer + ' enter move from 1-9: ');
-  if (this.getPosition(move) === 'X' || this.getPosition(move) === 'O') {
-    console.log('Spot is taken. Choose another move: ');
-    this.getMove();
-  } else if (!(move > 0) || !(move < 10)) {
-    console.log('move must be a number from 1-9: ');
-    this.getMove();
+  if (!(move > 0) || !(move < 10)) {
+    console.log('\nYour move must be a number from 1-9\n');
+    return this.getMove();
+  } else if (this.checkForDuplicates(move)) {
+    console.log('\nSpot is taken. Choose another move\n');
+    return this.getMove();
   } else {
     return move;
   }
@@ -83,10 +91,10 @@ ticTac.prototype.start = function() {
   }
   if (this.getWinner(position)) {
     this.drawGame();
-    console.log(this.currentPlayer + ' wins!');
+    console.log(this.currentPlayer + ' wins!\n');
   } else if (this.checkForTie()) {
     this.drawGame();
-    console.log('This game is a tie!');
+    console.log('This game is a tie!\n');
   } else {
     this.switchPlayer();
     this.start();
