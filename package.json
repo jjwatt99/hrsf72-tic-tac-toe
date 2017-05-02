@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -12,11 +12,7 @@
   },
   "author": "JJ Gutierrez",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jjwatt99/hrsf72-tic-tac-toe/issues"
-  },
-  "homepage": "https://github.com/jjwatt99/hrsf72-tic-tac-toe#readme",
   "dependencies": {
-    "commander": "^2.9.0"
+    "readline-sync": "^1.4.7"
   }
 }
